@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  laravel:
+    build: .
+    ports:
+      - 80:8000
+    environment:
+      LARAVEL_DB_HOST: mysql
+      LARAVEL_DB_NAME: antares
+      LARAVEL_DB_USER: root
+      LARAVEL_DB_PASS: root
+  mysql:
+    image: mysql
+    environment:
+      

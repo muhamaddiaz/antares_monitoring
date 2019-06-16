@@ -10,7 +10,7 @@
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Sign up with') }}</small></div>
-                        <div class="text-center">
+                        {{-- <div class="text-center">
                             <a href="#" class="btn btn-neutral btn-icon mr-4">
                                 <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
                                 <span class="btn-inner--text">{{ __('Github') }}</span>
@@ -19,7 +19,7 @@
                                 <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/google.svg"></span>
                                 <span class="btn-inner--text">{{ __('Google') }}</span>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
@@ -54,6 +54,14 @@
                                     </span>
                                 @endif
                             </div>
+                            <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                                <input type="file" name="image" class="form-control">
+                                @if ($errors->has('image'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
@@ -81,7 +89,7 @@
                             <div class="row my-4">
                                 <div class="col-12">
                                     <div class="custom-control custom-control-alternative custom-checkbox">
-                                        <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                                        <input class="custom-control-input" id="customCheckRegister" type="checkbox" required>
                                         <label class="custom-control-label" for="customCheckRegister">
                                             <span class="text-muted">{{ __('I agree with the') }} <a href="#!">{{ __('Privacy Policy') }}</a></span>
                                         </label>
