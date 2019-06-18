@@ -54,14 +54,14 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                            {{-- <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
                                 <input type="file" name="image" class="form-control">
                                 @if ($errors->has('image'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                         <strong>{{ $errors->first('image') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            </div> --}}
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">
